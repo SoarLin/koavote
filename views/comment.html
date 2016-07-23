@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}New comment{% endblock %}
+
+{% block content %}
+<h1>Thank you for your vote</h1>
+<form action="/vote/{{ voteId }}/comment" method="post" name="commentForm">
+    <div class="form-group">
+        <div class="row">
+          <label for="comment" class="control-label">Write additional comments below
+        </label>
+        </div>
+        <div class="row">
+          <textarea name="comment" cols="30" rows="10"></textarea>
+        </div>
+        <div class="row">
+          <button type="submit" class="btn btn-primary">Ok</button>
+          <a href="/" type="button" class="btn btn-primary">No thanks</a>
+        </div>
+    </div>
+</form>
+{% endblock %}

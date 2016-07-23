@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block title %}New vote{% endblock %}
+
+{% block content %}
+<h1>{{ questionTitle }}</h1>
+<form name="voteForm" action="/vote" method="post" role="form">
+    <input type="hidden" id="tagString" name="tagString" value="{{ tagString }}">
+    <input type="hidden" id="questionTitle" name="questionTitle" value="{{ questionTitle }}">
+    <input type="hidden" id="questionId" name="questionId" value="{{ questionId }}">
+    <div class="form-group row">
+        <input type="hidden" id="voteValue" name="voteValue" value="0">
+        <div class="col-md-3">
+            <button onclick="submitVote(1)" type="button">
+                <img src="/img/1.png" alt="unhappy" width="150px">
+            </button>
+        </div>
+        <div class="col-md-3">
+            <button onclick="submitVote(2)" type="button">
+                <img src="/img/2.png" alt="normal" width="150px">
+            </button>
+        </div>
+        <div class="col-md-3">
+            <button onclick="submitVote(3)" type="button">
+                <img src="/img/3.png" alt="smile" width="150px">
+            </button>
+        </div>
+        <div class="col-md-3">
+            <button onclick="submitVote(4)" type="button">
+                <img src="/img/4.png" alt="very_happy" width="150px">
+            </button>
+        </div>
+    </div>
+</form>
+<script type="text/javascript">
+function submitVote(vote) {
+    document.getElementById('voteValue').value = vote;
+    voteForm.submit();
+};
+</script>
+{% endblock %}

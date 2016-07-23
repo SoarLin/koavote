@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %}Question: {{ questionTitle }}{% endblock %}
+
+{% block content %}
+<h1>Update question {{ questionTitle }}</h1>
+<form name="questionForm" action="/question/{{ id }}" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label for="questionTitle" class="col-sm-2 control-label lead">Question : </label>
+        <div class="col-sm-10">
+            <input type="text" id="questionTitle" name="questionTitle" class="form-control input-lg" value="{{ questionTitle }}" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="tagString" class="col-sm-2 control-label lead">Tags : </label>
+        <div class="col-sm-10">
+            <input type="text" id="tagString" name="tagString" class="form-control input-lg" value="{{ tagString }}">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-2">&nbsp;</div>
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Update question</button>
+            <a href="/vote?questionId={{ id }}" class="btn btn-info">Vote this</a>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

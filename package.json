@@ -1,0 +1,32 @@
+{
+  "name": "koavote",
+  "version": "1.0.0",
+  "description": "create a vote system use koa framework, need to start mongo db (mongod)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "./node_modules/mocha/bin/mocha -u bdd -R spec"
+  },
+  "keywords": [
+    "koa",
+    "vote"
+  ],
+  "author": "Soar Lin <soar.lin@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "co-body": "^4.2.0",
+    "co-monk": "^1.0.0",
+    "co-view": "0.0.1",
+    "koa": "^1.2.0",
+    "koa-route": "^2.4.2",
+    "koa-static": "^2.0.0",
+    "monk": "^3.0.4",
+    "swig": "^1.4.2"
+  },
+  "devDependencies": {
+    "co": "^4.6.0",
+    "mocha": "^2.5.3",
+    "should": "^9.0.2",
+    "supertest": "^1.2.0"
+  }
+}
